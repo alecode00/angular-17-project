@@ -1,0 +1,19 @@
+<section>
+  @if(isLoggedIn){
+  <p>Bienvenido, {{ username }}</p>
+  <img
+    (click)="handleIsLoggedIn()"
+    src="https://github.com/midudev.png"
+    alt="Foto de midudev"
+  />
+  <app-games
+    (addFavoriteEvent)="getFavorite($event)"
+    username="{{ username }}"
+    favGame="{{ favGame }}"
+  ></app-games>
+  <button (click)="handleIsLoggedIn()">Log Out</button>
+  }@else {
+  <p>Inicia sesión</p>
+  <button (click)="handleIsLoggedIn()">Log in</button>
+  }
+</section>
